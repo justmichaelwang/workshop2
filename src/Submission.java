@@ -8,8 +8,15 @@ public class Submission {
     public int attemptNum;
     public int numFiles;
     private File[] files;
-    // Return two fake files
+    
     public static void main(String[] args) {
+    	Submission sub = new Submission();
+    	sub.includedFiles();
+    	
+    }
+    
+    // Return two fake files
+    public File[] includedFiles() {
         File[] files = new File[2];
         
         Date date1 = new Date();
@@ -24,6 +31,7 @@ public class Submission {
         }
         files[0] = new File("test1", date1, "Elbert is a boy.\nJessie is a girl.\nMichael is a boy as well.\nElbert's family name is Wang.\nJessie's family name is Guo.\nMichael's family name is Wang.\n");
         files[1] = new File("test2", date2, "Elbert is a boy.\nJessie is a girl.\nMichael is a boy as well.\nElbert's family name is Wang.\nJessie's family name is Guo.\nMichael's family name is Wang.\nElbert is a boy.\nJessie is a girl.\nMichael is a boy as well.\nElbert's family name is Wang.\nJessie's family name is Guo.\nMichael's family name is Wang.\n");
-        System.out.println(files[1].content());
+        System.out.println(files[0].content());
+        return files;
     }
 }
