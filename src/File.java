@@ -27,7 +27,6 @@ class File {
         }
     }
     public String content(){
-        String a = new String("blablabla");
-        return a;
+        return this.fileData;
     }
 }
