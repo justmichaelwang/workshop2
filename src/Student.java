@@ -7,6 +7,7 @@ public abstract class Student extends Person {
 		
 	}
 	public float totalGrade (){
+		return 0;
 		
 	}
 }
