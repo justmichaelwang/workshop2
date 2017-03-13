@@ -5,6 +5,11 @@ class File {
     public String fileName;
     public Date createDate;
     public String fileData;
+    public File (String fileName,Date createDate,String fileData){
+        this.fileName = fileName;
+        this.createDate = createDate;
+        this.fileData = fileData;
+    }
     public String fileType(){
         double num = Math.random();
         if(num<0.5){
