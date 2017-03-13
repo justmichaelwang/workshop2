@@ -1,5 +1,3 @@
-package com.unimelb.swen30006.workshops;
-
 /** A simple interface to allow for generic submission validators with different
  * validation rules for assignment submissions.
  * Created by Mat on 08/02/2016.
