@@ -35,9 +35,13 @@ public class Assignment implements SubmissionValidator{
 
 		for (File f:files){
 			double score = this.similarity(f.content(),standard);
-            System.out.printf("Similarity is %.2f%%.\n",score*100.0);
-
-			System.out.println(f.content());
+            System.out.printf("File:%s\nSimilarity is %.2f%%.\n",f.fileName,score*100.0);
+			if (score>=0.3){
+				this.invalidSubmissions();
+			}
+			else{
+				this.validSubmissions();
+			}
 		}
 		return true;
 	}
@@ -52,8 +56,13 @@ public class Assignment implements SubmissionValidator{
 	 */
 	public static double similarity(String s1, String s2) {
 		if (s1.length() == 0) { return 1.0; /* both strings are zero length */ }
-		return (s1.length() - editDistance(s1, s2)) / (double) s2.length();
-
+		double score = (s1.length() - editDistance(s1, s2)) / (double) s2.length();
+		if (score > 1.0){
+			return 1.0;
+		}
+		else{
+			return score;
+		}
 	}
 
 	// implementation of the Levenshtein Edit Distance
@@ -71,27 +80,27 @@ public class Assignment implements SubmissionValidator{
 			a2.add(str1.nextToken());
 		}
 
-
-		int[] costs = new int[s2.length() + 1];
-		for (int i = 0; i <= s1.length(); i++) {
+		int[] costs = new int[a2.size() + 1];
+		for (int i = 0; i <= a1.size(); i++) {
 			int lastValue = i;
-			for (int j = 0; j <= s2.length(); j++) {
+			for (int j = 0; j <= a2.size(); j++) {
 				if (i == 0)
 					costs[j] = j;
 				else {
 					if (j > 0) {
 						int newValue = costs[j - 1];
-						if (s1.charAt(i - 1) != s2.charAt(j - 1))
+						if (!(a1.elementAt(i - 1).equalsIgnoreCase(a2.elementAt(j - 1)))) {
 							newValue = Math.min(Math.min(newValue, lastValue),
 									costs[j]) + 1;
-						costs[j - 1] = lastValue;
-						lastValue = newValue;
+							costs[j - 1] = lastValue;
+							lastValue = newValue;
+						}
 					}
 				}
 			}
 			if (i > 0)
-				costs[s2.length()] = lastValue;
+				costs[a2.size()] = lastValue;
 		}
-		return costs[s2.length()];
+		return costs[a2.size()];
 	}
 }
