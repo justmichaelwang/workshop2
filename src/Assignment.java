@@ -6,13 +6,22 @@ public class Assignment {
 	public Date dueDate;
 	public int maxAttempts;
 	
+	public Assignment(String name, String description, Date dueDate, int maxAttempts){
+		this.name = name;
+		this.description = description;
+		this.dueDate = dueDate;
+		this.maxAttempts = maxAttempts;
+	}
+	
 	public Submission[] validSubmissions(){
-		return null;
+		Submission[] validSubms = new Submission[2];
+		return validSubms;
 		
 	}
 	
 	public Submission[] invalidSubmissions(){
-		return null;
+		Submission[] invalidSubms = new Submission[2];
+		return invalidSubms;
 		
 	}
 }
