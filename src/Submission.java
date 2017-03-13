@@ -8,6 +8,7 @@ public class Submission {
     public int attemptNum;
     public int numFiles;
     private File[] files;
+   
     
     public static void main(String[] args) {
     	Submission sub = new Submission();
@@ -34,4 +35,12 @@ public class Submission {
         System.out.println(files[0].content());
         return files;
     }
+
+    public void compar () {
+    	Validator check = new Validator ();
+    	File[] files = new File[2];
+    	files = includedFiles();
+		check.comparision (files);
+    }
+	
 }
