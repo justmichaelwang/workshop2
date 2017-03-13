@@ -1,0 +1,14 @@
+Elbert is a boy.
+Jessie is a girl.
+Michael is a boy as well.
+Elbert's family name is Wang.
+Jessie's family name is Guo.
+Michael's family name is Wang.
+
+Elbert is a boy.
+Jessie is a girl.
+Michael is a boy as well.
+Elbert's family name is Wang.
+Jessie's family name is Guo.
+Michael's family name is Wang.
+
