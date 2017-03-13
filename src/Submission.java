@@ -32,15 +32,10 @@ public class Submission {
         }
         files[0] = new File("test1", date1, "Elbert is a boy.\nJessie is a girl.\nMichael is a boy as well.\nElbert's family name is Wang.\nJessie's family name is Guo.\nMichael's family name is Wang.\n");
         files[1] = new File("test2", date2, "Elbert is a boy.\nJessie is a girl.\nMichael is a boy as well.\nElbert's family name is Wang.\nJessie's family name is Guo.\nMichael's family name is Wang.\nElbert is a boy.\nJessie is a girl.\nMichael is a boy as well.\nElbert's family name is Wang.\nJessie's family name is Guo.\nMichael's family name is Wang.\n");
+        Assignment assignment = new Assignment(files);
+
         System.out.println(files[0].content());
         return files;
     }
 
-    public void compar () {
-    	Validator check = new Validator ();
-    	File[] files = new File[2];
-    	files = includedFiles();
-		check.comparision (files);
-    }
-	
 }

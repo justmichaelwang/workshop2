@@ -1,11 +1,14 @@
 import java.util.Date;
 
-public class Assignment {
+public class Assignment implements SubmissionValidator{
 	public String name;
 	public String description;
 	public Date dueDate;
 	public int maxAttempts;
-	
+	public Assignment(File[] files){
+
+	}
+
 	public Assignment(String name, String description, Date dueDate, int maxAttempts){
 		this.name = name;
 		this.description = description;
@@ -23,5 +26,9 @@ public class Assignment {
 		Submission[] invalidSubms = new Submission[2];
 		return invalidSubms;
 		
+	}
+
+	public ValidationError[] validateSubmission(Submission submission){
+
 	}
 }
